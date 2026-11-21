@@ -25,6 +25,7 @@ const PUBS=[
 {y:2016,th:'cb',t:'Tourist growth and the implications for retail marketing strategy: Insights from Japan',a:'Larke, R., Kilgour, M., & John, S. P.',v:'Journal of Travel & Tourism Marketing, 33(5), 658–670'},
 {y:2016,th:'cb',t:'An analysis of push and pull motivators investigated in medical tourism research published from 2000 to 2016',a:'John, S. P., & Larke, R.',v:'Tourism Review International, 20(2–3), 73–90'},
 {y:2015,th:'social',t:'The integration of information technology in higher education: A study of faculty’s attitude towards IT adoption in the teaching process',a:'John, S. P.',v:'Contaduría y Administración, 60, 230–252 (also published in Spanish)'},
+{y:2014,th:'social',t:'Relationship between trust and e-commerce adoption: A study of potential moderators',a:'John, S. P.',v:'World Business, Finance and Management Conference, Auckland, New Zealand (Best Paper Award)'},
 {y:2014,th:'social',t:'An empirical study about the role of personality traits in information technology adoption',a:'Sriyabhand, T., & John, S. P.',v:'Humanities, Arts and Social Sciences Studies, 67–90'},
 {y:2013,th:'social',t:'Influence of computer self-efficacy on information technology adoption',a:'John, S. P.',v:'International Journal of Information Technology, 19(1), 1–13'},
 {y:2013,th:'social',t:'Measurement of B2C e-commerce acceptance in Thailand: An application of unified theory of acceptance and use of technology',a:'John, S. P.',v:'Assumption University'},

@@ -283,23 +283,33 @@ certs=[('meta-measure-optimize-social-media.jpg','Measure and Optimize Social Me
 ('ibm-data-analytics-foundations.jpg','Data Analytics Foundations: Turn Data into Insights','IBM','19 June 2024','47QDTP4YH4TW')]
 def doc(f,w,h,alt,crop=False): return f'<a class="doc{" crop" if crop else ""}" href="img/certs/{f}" target="_blank" rel="noopener"><img src="img/certs/{f}" width="{w}" height="{h}" loading="lazy" decoding="async" alt="{alt}"></a>'
 cc=''.join(f'<div>{doc(f,1100,852,"Course certificate: "+t.replace("&amp;","and"))}<h3>{t}</h3><p>{iss}, offered through Coursera, {d}</p><a class="tlink" href="https://coursera.org/verify/{c}" target="_blank" rel="noopener">Verify certificate</a></div>' for f,t,iss,d,c in certs)
-awards=phead('Awards &amp; certifications','Recognition for my research and teaching, my formal teaching qualification, and the professional certificates I have completed to keep my digital marketing and data skills current.')+f'''
+awards=phead('Awards &amp; certifications','Awards and recognition for my research, reviewing and teaching, my formal teaching qualification, and the professional certificates I have completed to keep my digital marketing and data skills current.')+f'''
 <section class="sec"><div class="wrap split">
+<header><h2>Awards</h2></header>
+<div>
+<div class="award">{doc('fiib-most-impactful-paper-2024.jpg',1100,758,'Most Impactful Paper Award 2024 certificate from FIIB Business Review and Sage')}<div><h3>Most Impactful Paper Award 2024, FIIB Business Review</h3><p>Awarded by FIIB Business Review (Sage) for &ldquo;Factors Affecting the Adoption of Social Media in Marketing of Higher Education: An Empirical Analysis&rdquo;, signed by editor Sudhir Rana and executive editor Radhika Shrivastava.</p></div></div>
+<div class="award">{doc('jhtm-best-reviewer-award.jpg',1100,843,'Best Reviewer Recognition Award from the Journal of Hospitality and Tourism Management')}<div><h3>Best Reviewer Recognition Award, Journal of Hospitality &amp; Tourism Management</h3><p>Presented by Elsevier for a significant contribution in reviewing articles for the journal, while at Waikato Management School, University of Waikato. Signed by co-editors-in-chief Professor Marianna Sigala and Professor Marg Deery.</p></div></div>
+<div class="award">{doc('best-paper-wbfmc-2014.jpg',745,1100,'Best Paper Certificate from the World Business, Finance and Management Conference 2014')}<div><h3>Best Paper Award, World Business, Finance and Management Conference 2014</h3><p>For &ldquo;Relationship between Trust and E-Commerce Adoption: A Study of Potential Moderators&rdquo;, presented at the international conference held in Auckland, New Zealand, on 8&ndash;9 December 2014, while at Assumption University, Thailand.</p></div></div>
+</div>
+</div></section>
+
+<section class="sec mist"><div class="wrap split">
 <header><h2>Recognition</h2></header>
 <div>
 <div class="award">{doc('elsevier-jhtm-reviewer.jpg',1100,778,'Elsevier Certificate of Reviewing from the Journal of Hospitality and Tourism Management')}<div><h3>Elsevier Certificate of Reviewing, Journal of Hospitality and Tourism Management</h3><p>Awarded by the editors for 19 reviews contributed to the journal between December 2015 and June 2025.</p></div></div>
 <div class="award">{doc('wiley-reviewer-2025.jpg',1100,850,'Wiley Reviewer Certificate 2025 for the Journal of Consumer Behaviour')}<div><h3>Wiley Reviewer Certificate 2025</h3><p>Awarded by Wiley for serving as a reviewer for the <i>Journal of Consumer Behaviour</i>, signed by co-editors-in-chief Steven D&rsquo;Alessandro and Varsha Jain.</p></div></div>
 <div class="award">{doc('sage-fiib-reviewer-2026.jpg',707,1000,'Sage Certificate of Reviewing from FIIB Business Review')}<div><h3>Sage Certificate of Reviewing, FIIB Business Review</h3><p>Awarded by the editor in recognition of a manuscript review completed on 17 September 2026. The manuscript title is blurred to keep the review confidential.</p></div></div>
 <div class="award" id="amity-letter">{doc('amity-letter-of-appreciation.jpg',1000,1414,'Letter of appreciation from Amity University Chhattisgarh')}<div><h3>Letter of appreciation, Amity University Chhattisgarh</h3><p>For an international guest lecture to MBA students, &ldquo;E-Commerce in the AI Era: Trends, Marketing &amp; Consumer Behaviour&rdquo;, on 9 September 2026, from Amity Business School and the Centre for International Affairs.</p><p style="margin-top:12px"><a class="tlink" href="img/certs/amity-letter-of-appreciation.jpg" target="_blank" rel="noopener">Read the full letter</a></p></div></div>
+<div class="award">{doc('ibec-2015-presentation.jpg',874,1100,'Certificate of presentation from the 14th International Business and Economy Conference 2015')}<div><h3>Certificate of presentation, 14th International Business &amp; Economy Conference (IBEC 2015)</h3><p>For presenting &ldquo;The Integration of Information Technology in Higher Education: A Study of Faculty&rsquo;s Attitude towards IT Adoption in the Teaching Process&rdquo; at Assumption University, Bangkok, on 5&ndash;8 January 2015.</p></div></div>
 </div>
 </div></section>
 
-<section class="sec mist"><div class="wrap split">
+<section class="sec"><div class="wrap split">
 <header><h2>Teaching qualification</h2></header>
 <div class="award" style="border:0;padding:0">{doc('nz-certificate-adult-tertiary-teaching.jpg',1024,634,'New Zealand Certificate in Adult and Tertiary Teaching (Level 5) awarded by the Open Polytechnic of New Zealand')}<div><h3>New Zealand Certificate in Adult and Tertiary Teaching (Level 5)</h3><p>Awarded by the Open Polytechnic of New Zealand (Kuratini Tuwhera), 18 November 2019. A New Zealand Qualifications Framework qualification (NZQF 2993) in adult and tertiary teaching practice.</p></div></div>
 </div></section>
 
-<section class="sec"><div class="wrap">
+<section class="sec mist"><div class="wrap">
 <h2 style="margin-bottom:10px">Professional certificates</h2>
 <p class="muted" style="margin-bottom:32px">Online courses authorised by Meta and IBM and offered through Coursera. Each can be checked on Coursera.</p>
 <div class="certs">{cc}</div>

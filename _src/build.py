@@ -77,16 +77,15 @@ home=f'''
 <figure class="hero-photo" style="margin:0"><img src="img/class/applied-research-methods-lg.jpg" width="2000" height="1126" alt="Dr Surej P John with his postgraduate Applied Research Methods class at EIT"><figcaption>With my postgraduate Applied Research Methods class</figcaption></figure>
 </section>
 
-<section class="sec"><div class="wrap about">
-<img src="img/portrait-tall.jpg" width="700" height="958" alt="Portrait of Dr Surej P John" loading="lazy">
+<section class="sec"><div class="wrap split">
+<header><h2>Marketing scholar, teacher and research supervisor</h2></header>
 <div>
-<h2>Marketing scholar, teacher and research supervisor</h2>
 <p class="lead">My work sits where marketing meets technology: how people adopt new tools, how AI changes service, and how organisations build lasting relationships with customers and students.</p>
 <p>I hold a PhD in Information Technology and an MBA in Marketing, and I have taught at universities in New Zealand and Thailand since 2007. More than 50 master&rsquo;s students have completed their research under my supervision.</p>
-<ul class="creds">
-<li><b>Editorial board</b>FIIB Business Review and Journal of Hospitality and Tourism Management</li>
-<li><b>Reviewer</b>Annals of Tourism Research, Australasian Marketing Journal, Journal of Consumer Behaviour and other leading journals</li>
-</ul>
+<div class="creds">
+<div><div class="cr"><b>Section editor</b><ul class="jlist"><li>Australasian Journal of Information Systems</li></ul></div><div class="cr"><b>Editorial board member</b><ul class="jlist"><li>FIIB Business Review</li><li>Journal of Hospitality and Tourism Management</li><li>FOCUS: Journal of International Business</li></ul></div></div>
+<div class="cr"><b>Reviewer</b><ul class="jlist"><li>Annals of Tourism Research</li><li>Tourism Management</li><li>Current Issues in Tourism</li><li>Australasian Marketing Journal</li><li>Journal of Consumer Behaviour</li><li>Journal of Hospitality and Tourism Technology</li><li>Journal of Travel and Tourism Marketing</li><li>Journal of Strategic Marketing</li><li>Journal of Travel Research</li><li>Anatolia</li><li>International Journal of E-Commerce</li></ul></div>
+</div>
 </div>
 </div></section>
 
@@ -144,8 +143,9 @@ research=phead('Research','How digital channels, AI and human interaction create
 <section class="sec"><div class="wrap split">
 <header><h2>Editorial and review roles</h2></header>
 <ul class="rows">
-<li><h3>Editorial board member</h3><p>FIIB Business Review; Journal of Hospitality and Tourism Management</p></li>
-<li><h3>Reviewer</h3><p>Annals of Tourism Research, Australasian Marketing Journal, Journal of Consumer Behaviour, Journal of Hospitality and Tourism Technology, Journal of Travel and Tourism Marketing, Journal of Strategic Marketing, Journal of Travel Research, Anatolia, Australasian Journal of Information Systems and International Journal of E-Commerce</p></li>
+<li><h3>Section editor</h3><ul class="jlist"><li>Australasian Journal of Information Systems</li></ul></li>
+<li><h3>Editorial board member</h3><ul class="jlist"><li>FIIB Business Review</li><li>Journal of Hospitality and Tourism Management</li><li>FOCUS: Journal of International Business</li></ul></li>
+<li><h3>Reviewer</h3><ul class="jlist"><li>Annals of Tourism Research</li><li>Tourism Management</li><li>Current Issues in Tourism</li><li>Australasian Marketing Journal</li><li>Journal of Consumer Behaviour</li><li>Journal of Hospitality and Tourism Technology</li><li>Journal of Travel and Tourism Marketing</li><li>Journal of Strategic Marketing</li><li>Journal of Travel Research</li><li>Anatolia</li><li>International Journal of E-Commerce</li></ul></li>
 <li><h3>Methods</h3><p>Structural equation modelling and multivariate analysis (SPSS, AMOS), systematic literature reviews, and qualitative analysis in NVivo.</p></li>
 </ul>
 </div></section>

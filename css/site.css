@@ -103,9 +103,14 @@ p:last-child{margin-bottom:0}
 .about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center}
 .about img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
 .about h2{margin-bottom:18px}
-.creds{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px}
-.creds li{border-top:2px solid var(--ink);padding-top:10px;font-size:15px;color:var(--muted)}
-.creds b{display:block;font-family:var(--serif);font-weight:500;font-size:21px;color:var(--ink);line-height:1.2;margin-bottom:2px}
+.creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 40px;margin-top:28px}
+.cr{border-top:2px solid var(--ink);padding-top:10px}
+.cr+.cr{margin-top:24px}
+.cr b{display:block;font-family:var(--serif);font-weight:500;font-size:21px;color:var(--ink);line-height:1.2;margin-bottom:6px}
+.jlist{list-style:none;padding:0;margin:0}
+.jlist li{font-size:15px;color:var(--muted);padding:5px 0;border-top:1px solid var(--line)}
+.jlist li:first-child{border-top:0}
+.rows .jlist{grid-column:auto}
 
 /* now list */
 .now{list-style:none;padding:0;margin:0}
@@ -163,12 +168,12 @@ p:last-child{margin-bottom:0}
 .cols .tlink{display:inline-block;margin-top:auto;padding-top:14px}
 .navy .tlink{color:#fff}
 .rows{list-style:none;padding:0;margin:0}
-.rows li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;padding:18px 0;border-top:1px solid var(--line)}
-.rows li:last-child{border-bottom:1px solid var(--line)}
+.rows>li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;padding:18px 0;border-top:1px solid var(--line)}
+.rows>li:last-child{border-bottom:1px solid var(--line)}
 .rows h3{font-size:20px}
 .rows p{font-size:16px;color:var(--muted)}
-.rows.one li{grid-template-columns:minmax(0,1fr);gap:4px}
-.when-list li{grid-template-columns:130px minmax(0,1fr)}
+.rows.one>li{grid-template-columns:minmax(0,1fr);gap:4px}
+.when-list>li{grid-template-columns:130px minmax(0,1fr)}
 .when-list .when{font-weight:600;color:var(--muted);font-size:15px;white-space:nowrap}
 
 .talkimg{display:block;max-width:520px;margin-top:16px;border:1px solid var(--line);border-radius:4px;overflow:hidden}
@@ -279,7 +284,7 @@ blockquote{margin:18px 0 0;font-family:var(--serif);font-size:19px;line-height:1
 body{font-size:16px}
 .lead,.hero .intro{font-size:17px}
 .cols,.certs,.themes,.two,.creds{grid-template-columns:minmax(0,1fr)}
-.rows li,.award,.when-list li,.now li{grid-template-columns:minmax(0,1fr);gap:6px}
+.rows>li,.award,.when-list>li,.now>li{grid-template-columns:minmax(0,1fr);gap:6px}
 .yr{grid-template-columns:minmax(0,1fr);gap:8px}
 .grant{grid-template-columns:minmax(0,1fr);gap:10px}
 .gal,.gal.three{grid-template-columns:minmax(0,1fr)}

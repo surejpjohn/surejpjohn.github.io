@@ -1,9 +1,9 @@
 {
 const TH={
-  social:{n:'Information technology & digital marketing',s:'Information technology',c:'var(--t1)'},
-  cx:{n:'Customer experience & value co-creation',s:'Customer experience',c:'var(--t2)'},
-  ai:{n:'Artificial intelligence in marketing',s:'Artificial intelligence',c:'var(--t3)'},
-  cb:{n:'Relationship marketing & consumer behaviour',s:'Relationship marketing',c:'var(--t4)'}
+  social:{n:'Information technology & digital marketing',s:'Information technology',c:'var(--th-social)',d:'How organisations, retailers and tertiary providers adopt information technology and digital channels, and how customers respond.'},
+  cx:{n:'Customer experience & value co-creation',s:'Customer experience',c:'var(--th-cx)',d:'How customers and firms create value together for memorable experiences, especially in tourism and hospitality.'},
+  ai:{n:'Artificial intelligence in marketing',s:'Artificial intelligence',c:'var(--th-ai)',d:'How AI and digital technologies transform customer experience, from service recovery to online food delivery.'},
+  cb:{n:'Relationship marketing & consumer behaviour',s:'Relationship marketing',c:'var(--th-cb)',d:'Relationships with students and customers: satisfaction, service orientation, motivation, empathy and loyalty.'}
 };
 const PUBS=[
 {y:2026,th:'social',t:'Influencer marketing and tourist behaviour: A systematic literature review of attitudes, intentions and behaviours in tourism',a:'John, S. P., & Supramaniam, K.',v:'International Journal of Tourism Research, 28(1), e70226',d:'10.1002/jtr.70226'},
@@ -41,74 +41,56 @@ const PUBS=[
 ];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const cnt=k=>PUBS.filter(p=>p.th===k).length;
+const sq=k=>`<span class="sq" style="--c:${TH[k].c}"></span>`;
 
-/* counts anywhere on the page */
+/* mobile menu */
+const top=document.querySelector('.top'),mt=document.querySelector('.mtoggle');
+if(top&&mt){mt.addEventListener('click',()=>{const o=top.classList.toggle('open');mt.setAttribute('aria-expanded',o)})}
+
 document.querySelectorAll('[data-count]').forEach(el=>{const k=el.dataset.count;el.textContent=k==='all'?PUBS.length:cnt(k)});
 
-/* research map */
-const s=document.getElementById('map');
-if(s){
-  const keys=Object.keys(TH),cap=document.getElementById('mapcap'),capDef=cap?cap.innerHTML:'';
-  let first=true;
-  const draw=()=>{
-    const W=s.clientWidth,H=s.clientHeight;if(!W||!H)return;
-    const narrow=W<520,cx=W/2,cy=H/2;
-    const R=Math.min(W*0.33,H*0.36);
-    const hub=Math.max(46,Math.min(W,H)*(W<520?0.17:0.2));
-    const ang=[-140,-40,40,140].map(a=>a*Math.PI/180);
-    let out=`<defs><radialGradient id="hg" cx="35%" cy="30%"><stop offset="0" stop-color="#2a4486"/><stop offset="1" stop-color="#0f2147"/></radialGradient></defs>`;
-    keys.forEach((k,i)=>{
-      const n=cnt(k),x=cx+Math.cos(ang[i])*R*1.18,y=cy+Math.sin(ang[i])*R;
-      const r=12+Math.sqrt(n)*7,c=TH[k].c;
-      let g=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="${c}" stroke-opacity=".35" stroke-width="2"/>`;
-      g+=`<circle class="halo" style="animation-delay:${i*0.7}s" cx="${x}" cy="${y}" r="${r+14}" fill="${c}" fill-opacity=".1"/>`;
-      PUBS.filter(p=>p.th===k).forEach((p,j)=>{
-        const a=j*(2*Math.PI/n)+i,d=r+9+((j%2)*7),px=x+Math.cos(a)*d,py=y+Math.sin(a)*d;
-        g+=`<circle class="pd" style="--dx:${(cx-px).toFixed(1)}px;--dy:${(cy-py).toFixed(1)}px;animation-delay:${(0.25+i*0.15+j*0.06).toFixed(2)}s" cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${p.d?4.5:3.2}" fill="${c}"${p.d?'':` fill-opacity=".55"`}/>`;
-      });
-      g+=`<circle class="nd" cx="${x}" cy="${y}" r="${r}" fill="${c}"/><text x="${x}" y="${y+6}" text-anchor="middle" fill="#fff" stroke="none" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="${narrow?15:18}">${n}</text>`;
-      const ly=Math.sin(ang[i])>0?y+r+34:y-r-24;
-      g+=`<text x="${Math.min(Math.max(x,70),W-70)}" y="${ly}" text-anchor="middle" fill="var(--ink)" font-size="14" font-weight="600">${TH[k].s}</text>`;
-      out+=`<a class="th" href="research.html#${k}" data-k="${k}" aria-label="${TH[k].n}: ${n} publications. Open on the Research page.">${g}</a>`;
-    });
-    out+=`<clipPath id="pc"><circle cx="${cx}" cy="${cy}" r="${hub}"/></clipPath><circle cx="${cx}" cy="${cy}" r="${hub+8}" fill="var(--bg)" stroke="var(--line)"/><circle cx="${cx}" cy="${cy}" r="${hub}" fill="url(#hg)"/><text x="${cx}" y="${cy+hub*0.16}" text-anchor="middle" fill="#fff" stroke="none" font-family="Space Grotesk,sans-serif" font-weight="600" font-size="${hub*0.5}">SJ</text><image href="img/portrait.jpg" x="${cx-hub}" y="${cy-hub}" width="${hub*2}" height="${hub*2}" clip-path="url(#pc)" preserveAspectRatio="xMidYMid slice"><title>Dr Surej P John</title></image><circle cx="${cx}" cy="${cy}" r="${hub}" fill="none" stroke="var(--navy)" stroke-width="3"/>`;
-    s.innerHTML=out;
-    if(first){first=false;s.classList.add('intro');setTimeout(()=>s.classList.remove('intro'),2600)}
-  };
-  const show=k=>{
-    s.classList.toggle('focus',!!k);
-    s.querySelectorAll('.th').forEach(t=>t.classList.toggle('on',t.dataset.k===k));
-    if(!cap)return;
-    if(!k){cap.innerHTML=capDef;return}
-    const ps=PUBS.filter(p=>p.th===k),l=ps[0];
-    cap.innerHTML=`<b style="color:var(--ink)">${TH[k].n}</b>: ${ps.length} publications, ${ps[ps.length-1].y}&ndash;${l.y}. Latest: <i>${esc(l.t)}</i> (${l.y}). Click to see them all.`;
-  };
-  s.addEventListener('pointerover',e=>{const t=e.target.closest('.th');show(t?t.dataset.k:null)});
-  s.addEventListener('pointerleave',()=>show(null));
-  s.addEventListener('focusin',e=>{const t=e.target.closest('.th');if(t)show(t.dataset.k)});
-  s.addEventListener('focusout',()=>show(null));
-  const ro=new ResizeObserver(draw);ro.observe(s);
+/* publication timeline (home) */
+const tl=document.getElementById('tline');
+if(tl){
+  const ys=PUBS.map(p=>p.y),y0=Math.min(...ys),y1=Math.max(...ys),cap=document.getElementById('tlcap'),capDef=cap.innerHTML;
+  const order=Object.keys(TH);
+  let cols='',yrs='',i=0;
+  for(let y=y0;y<=y1;y++){
+    const ps=PUBS.filter(p=>p.y===y).sort((a,b)=>order.indexOf(a.th)-order.indexOf(b.th));
+    cols+=`<div class="tl-col">${ps.map(p=>`<button type="button" style="--c:${TH[p.th].c};animation-delay:${(i++)*35}ms" data-i="${PUBS.indexOf(p)}" aria-label="${p.y}: ${esc(p.t)}"></button>`).join('')}</div>`;
+    yrs+=`<span>${y}</span>`;
+  }
+  tl.innerHTML=`<div class="tl-cols">${cols}</div><div class="tl-years">${yrs}</div>`;
+  tl.classList.add('play');
+  const show=b=>{tl.querySelectorAll('button.on').forEach(x=>x.classList.remove('on'));if(!b){cap.innerHTML=capDef;return}b.classList.add('on');const p=PUBS[b.dataset.i];cap.innerHTML=`<b>${esc(p.t)}</b><br>${esc(p.v)}, ${p.y}. ${TH[p.th].s}.`};
+  tl.addEventListener('pointerover',e=>show(e.target.closest('button')));
+  tl.addEventListener('pointerleave',()=>show(null));
+  tl.addEventListener('focusin',e=>show(e.target.closest('button')));
+  tl.addEventListener('click',e=>{const b=e.target.closest('button');if(b)location.href='research.html#'+PUBS[b.dataset.i].th});
+  const lg=document.getElementById('tlegend');
+  if(lg)lg.innerHTML=order.map(k=>`<span>${sq(k)}${TH[k].s}</span>`).join('');
 }
 
-/* theme cards on home */
-const tc=document.getElementById('themes');
-if(tc){tc.innerHTML=Object.keys(TH).map(k=>`<div class="card"><span class="count" style="color:${TH[k].c}">${cnt(k)}</span><h3>${TH[k].n}</h3><p>${tc.dataset['d'+k]||''}</p></div>`).join('')}
+/* themes list (home) */
+const tm=document.getElementById('themes');
+if(tm){tm.innerHTML=Object.keys(TH).map(k=>`<li><h3>${sq(k)}<a href="research.html#${k}" style="color:inherit;text-decoration:none">${TH[k].n}</a></h3><p>${TH[k].d}</p><a class="n" href="research.html#${k}">${cnt(k)} papers</a></li>`).join('')}
 
-/* recent pubs on home */
+/* recent publications (home) */
+const bibItem=p=>`<li><span class="t">${esc(p.t)}</span><span class="m">${esc(p.a)} ${esc(p.v)}${p.y?', '+p.y:''}.${p.d?` <a href="https://doi.org/${p.d}" target="_blank" rel="noopener">doi.org/${p.d}</a>`:''}</span><span class="tag">${sq(p.th)}${TH[p.th].s}</span></li>`;
 const rp=document.getElementById('recent');
-if(rp){rp.innerHTML=PUBS.filter(p=>p.d).slice(0,3).map(p=>`<div class="card"><span class="tag"><span class="dot" style="background:${TH[p.th].c}"></span>${p.y} · ${TH[p.th].s}</span><h3 style="margin-top:10px">${esc(p.t)}</h3><p>${esc(p.v)}</p><p style="margin-top:10px"><a class="more" href="https://doi.org/${p.d}">Read the article</a></p></div>`).join('')}
+if(rp){rp.innerHTML=PUBS.filter(p=>p.d).slice(0,3).map(bibItem).join('')}
 
-/* full publication list */
+/* full publication list (research) */
 const pl=document.getElementById('pubs');
 if(pl){
   let cur=TH[location.hash.slice(1)]?location.hash.slice(1):'all',q='';
   const f=document.getElementById('filters'),qs=document.getElementById('q');
-  f.innerHTML=`<button class="chip" type="button" data-k="all" aria-pressed="${cur==='all'}">All (${PUBS.length})</button>`+Object.keys(TH).map(k=>`<button class="chip" type="button" data-k="${k}" aria-pressed="${k===cur}"><span class="dot" style="background:${TH[k].c}"></span>${TH[k].s} (${cnt(k)})</button>`).join('');
+  f.innerHTML=`<button class="chip" type="button" data-k="all" aria-pressed="${cur==='all'}">All (${PUBS.length})</button>`+Object.keys(TH).map(k=>`<button class="chip" type="button" data-k="${k}" aria-pressed="${k===cur}">${sq(k)}${TH[k].s} (${cnt(k)})</button>`).join('');
   const render=()=>{
     const list=PUBS.filter(p=>(cur==='all'||p.th===cur)&&(!q||(p.t+' '+p.a+' '+p.v).toLowerCase().includes(q)));
-    if(!list.length){pl.innerHTML='<p class="empty">No publications match that search. Try a different word or clear the filter.</p>';return}
+    if(!list.length){pl.innerHTML='<p class="empty">No publications match that search. Try another word, or choose All.</p>';return}
     const yrs=[...new Set(list.map(p=>p.y))];
-    pl.innerHTML=yrs.map(y=>`<div class="yr"><h3>${y}</h3><div>${list.filter(p=>p.y===y).map(p=>`<div class="pub"><span class="t">${esc(p.t)}</span><span class="m">${esc(p.a)} ${esc(p.v)}.${p.d?` <a href="https://doi.org/${p.d}">doi.org/${p.d}</a>`:''}</span><span class="tag"><span class="dot" style="background:${TH[p.th].c};width:9px;height:9px"></span>${TH[p.th].s}</span></div>`).join('')}</div></div>`).join('');
+    pl.innerHTML=yrs.map(y=>`<div class="yr"><h3>${y}</h3><ul class="bib">${list.filter(p=>p.y===y).map(p=>bibItem({...p,y:0})).join('')}</ul></div>`).join('');
   };
   f.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;cur=b.dataset.k;f.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));render()});
   qs.addEventListener('input',()=>{q=qs.value.trim().toLowerCase();render()});
@@ -119,11 +101,10 @@ if(pl){
 const fm=document.getElementById('cform');
 if(fm){
   const done=document.getElementById('done'),out=document.getElementById('msgout'),ml=document.getElementById('mailbtn'),cp=document.getElementById('copybtn');
-  const params=location.hash.slice(1);
-  if(['students','research','industry'].includes(params)){const sel=document.getElementById('who');sel.value={students:'Prospective student',research:'Research collaborator',industry:'Industry partner'}[params]}
+  const h=location.hash.slice(1),map={students:'Prospective student',research:'Research collaborator',industry:'Industry partner'};
+  if(map[h])document.getElementById('who').value=map[h];
   fm.addEventListener('submit',e=>{
-    e.preventDefault();
-    let ok=true;
+    e.preventDefault();let ok=true;
     fm.querySelectorAll('[required]').forEach(i=>{const w=i.closest('.f');const bad=!i.value.trim()||(i.type==='email'&&!/^\S+@\S+\.\S+$/.test(i.value));w.classList.toggle('bad',bad);if(bad&&ok){i.focus();ok=false}});
     if(!ok)return;
     const v=id=>document.getElementById(id).value.trim();
@@ -133,6 +114,7 @@ if(fm){
     ml.href=`mailto:spjohn@eit.ac.nz?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
     done.classList.add('show');done.scrollIntoView({behavior:'smooth',block:'nearest'});
   });
-  cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(out.textContent);cp.textContent='Copied'}catch(_){cp.textContent='Select the text above to copy'}});
+  cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(out.textContent);cp.textContent='Copied'}catch(_){cp.textContent='Select the text above to copy it'}});
 }
+
 }

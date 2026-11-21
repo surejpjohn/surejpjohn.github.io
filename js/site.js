@@ -1,6 +1,6 @@
 {
 const TH={
-  social:{n:'Social media & influencer marketing',s:'Social media',c:'var(--t1)'},
+  social:{n:'Information technology & digital marketing',s:'Information technology',c:'var(--t1)'},
   cx:{n:'Customer experience & value co-creation',s:'Customer experience',c:'var(--t2)'},
   ai:{n:'Artificial intelligence in marketing',s:'Artificial intelligence',c:'var(--t3)'},
   cb:{n:'Relationship marketing & consumer emotions',s:'Relationship marketing',c:'var(--t4)'}

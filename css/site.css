@@ -178,3 +178,13 @@ footer a{color:var(--ink)}
 .ph figcaption{font-size:14px;color:var(--mute);margin-top:8px}
 .ph.wide{margin-bottom:24px}
 .gal{columns:2 320px;column-gap:20px}
+/* awards page */
+.certimg{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:#fff;margin-bottom:16px}
+.certimg img{display:block;width:100%;height:auto}
+.rec{display:grid;grid-template-columns:minmax(0,1fr);align-content:start}
+.rec .certimg{max-height:340px}
+.rec .certimg img{object-fit:cover;object-position:top;max-height:340px}
+.qual{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:28px;align-items:center}
+.qual .certimg{margin:0}
+.cert .vf{margin-top:12px}
+@media (max-width:760px){.qual{grid-template-columns:minmax(0,1fr)}}

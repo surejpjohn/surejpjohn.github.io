@@ -33,6 +33,8 @@ def page(fn, title, desc, body, extra_head=''):
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="img/portrait.jpg">
 <link rel="stylesheet" href="css/site.css?v={V}">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HY0EFH1K6Y"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-HY0EFH1K6Y');</script>
 {extra_head}</head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -49,7 +51,7 @@ def page(fn, title, desc, body, extra_head=''):
 <div><h4>Pages</h4><ul><li><a href="research.html">Research</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="consulting.html">Consulting &amp; speaking</a></li><li><a href="awards.html">Awards</a></li></ul></div>
 <div><h4>Profiles</h4><ul><li><a href="{SCHOLAR}" target="_blank" rel="me noopener">Google Scholar</a></li><li><a href="{RG}" target="_blank" rel="me noopener">ResearchGate</a></li><li><a href="{LINKEDIN}" target="_blank" rel="me noopener">LinkedIn</a></li><li><a href="{EIT}" target="_blank" rel="noopener">EIT staff profile</a></li></ul></div>
 <div><h4>Contact</h4><ul><li><a href="mailto:spjohn@eit.ac.nz">Email me</a></li><li><a href="contact.html">Contact form</a></li></ul></div>
-<p class="base">&copy; 2026 Dr Surej P John</p>
+<p class="base">&copy; 2026 Dr Surej P John. This site uses Google Analytics cookies to count visits and see which pages are read; it does not collect names or email addresses. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses this data</a>.</p>
 </div></footer>
 <script src="js/site.js?v={V}"></script>
 </body>

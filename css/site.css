@@ -237,6 +237,20 @@ blockquote{margin:18px 0 0;font-family:var(--serif);font-size:19px;line-height:1
 .fbcard>span:last-child{font-size:16px}
 @media (max-width:960px){.fbjoin{grid-template-columns:minmax(0,1fr)}}
 
+.sec-head{margin-bottom:26px}
+.sec-head h2{margin-bottom:8px}
+.jobs{list-style:none;padding:0;margin:0}
+.jobs li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:22px 0;border-top:1px solid var(--line)}
+.jobs li:last-child{border-bottom:1px solid var(--line)}
+.jb-main{flex:1 1 420px;min-width:0}
+.jobs h3{font-size:22px;margin-bottom:4px}
+.jb-meta{color:var(--muted);font-size:16px;margin:0}
+.jb-note{font-size:15px;margin:6px 0 0}
+.jb-tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.jb-type,.jb-close{font-size:13.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--mist);color:var(--ink);white-space:nowrap}
+.jb-close.soon{background:#fde4d9;color:#8a2c12}
+.jobs-empty{padding:22px 24px;background:var(--mist);border-radius:6px}
+
 /* contact */
 .contact{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:start}
 .form{display:grid;gap:18px}

@@ -118,4 +118,29 @@ if(fm){
   cp.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(out.textContent);cp.textContent='Copied'}catch(_){cp.textContent='Select the text above to copy it'}});
 }
 
+/* featured job openings from a published Google Sheet (CSV) */
+const jb=document.getElementById('jobs');
+if(jb&&jb.dataset.src){
+  const parseCSV=t=>{const rows=[];let row=[],f='',q=false;for(let i=0;i<t.length;i++){const c=t[i];if(q){if(c==='"'){if(t[i+1]==='"'){f+='"';i++}else q=false}else f+=c}else if(c==='"')q=true;else if(c===','){row.push(f);f=''}else if(c==='\n'||c==='\r'){if(c==='\r'&&t[i+1]==='\n')i++;row.push(f);rows.push(row);row=[];f=''}else f+=c}if(f!==''||row.length){row.push(f);rows.push(row)}return rows};
+  const fb='https://www.facebook.com/groups/2581477435669903/';
+  const safeUrl=u=>{try{const x=new URL(u.trim());return /^https?:$/.test(x.protocol)?x.href:''}catch(e){return ''}};
+  const parseDate=s=>{s=(s||'').trim();let m=s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);if(m)return new Date(+m[1],m[2]-1,+m[3]);m=s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);if(m)return new Date(+m[3],m[2]-1,+m[1]);const d=new Date(s);return isNaN(d)?null:d};
+  const fmt=d=>d.toLocaleDateString('en-NZ',{day:'numeric',month:'short',year:'numeric'});
+  fetch(jb.dataset.src,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(r.status);return r.text()}).then(t=>{
+    const rows=parseCSV(t).filter(r=>r.some(c=>c.trim()));
+    if(!rows.length)throw new Error('empty');
+    const h=rows[0].map(x=>x.trim().toLowerCase());
+    const col=n=>h.findIndex(x=>x.startsWith(n));
+    const ix={t:col('title'),e:col('employer'),l:col('location'),ty:col('type'),c:col('clos'),k:col('link'),n:col('note')};
+    const g=(r,k)=>ix[k]>=0?(r[ix[k]]||'').trim():'';
+    const today=new Date();today.setHours(0,0,0,0);
+    const jobs=rows.slice(1).map(r=>({t:g(r,'t'),e:g(r,'e'),l:g(r,'l'),ty:g(r,'ty'),d:parseDate(g(r,'c')),k:safeUrl(g(r,'k')),n:g(r,'n')}))
+      .filter(x=>x.t&&(!x.d||x.d>=today))
+      .sort((a,b)=>(a.d?a.d.getTime():Infinity)-(b.d?b.d.getTime():Infinity));
+    if(!jobs.length){jb.innerHTML=`<div class="jobs-empty"><p>No featured openings right now. New roles are shared regularly in the <a href="${fb}" target="_blank" rel="noopener">Postgrad Careers Hub Facebook group</a>, and you can search the job sites below.</p></div>`;return}
+    jb.innerHTML='<ul class="jobs">'+jobs.map(x=>{const days=x.d?Math.round((x.d-today)/864e5):null;const soon=days!==null&&days<=7;
+      return `<li><div class="jb-main"><h3>${esc(x.t)}</h3><p class="jb-meta">${[x.e,x.l].filter(Boolean).map(esc).join(', ')}</p>${x.n?`<p class="jb-note">${esc(x.n)}</p>`:''}<p class="jb-tags">${x.ty?`<span class="jb-type">${esc(x.ty)}</span>`:''}${x.d?`<span class="jb-close${soon?' soon':''}">${soon?(days===0?'Closes today':'Closes soon: '):'Closes '}${days===0?'':fmt(x.d)}</span>`:''}</p></div>${x.k?`<a class="btn btn-solid" href="${esc(x.k)}" target="_blank" rel="noopener">View advert</a>`:''}</li>`}).join('')+'</ul>';
+  }).catch(()=>{jb.innerHTML=`<div class="jobs-empty"><p>The featured openings can&rsquo;t be loaded right now. See the latest roles in the <a href="${fb}" target="_blank" rel="noopener">Postgrad Careers Hub Facebook group</a> or search the job sites below.</p></div>`});
+}
+
 }

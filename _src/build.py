@@ -342,8 +342,14 @@ careers=phead('Careers','Support for postgraduate students and graduates finding
 <figure class="fbcard" aria-hidden="true"><span class="fbtag">New Zealand</span><strong>Postgrad Careers Hub</strong><span>Jobs, CVs, interviews and support</span></figure>
 </div></section>
 
+<section class="sec" id="openings"><div class="wrap">
+<div class="sec-head"><h2>Featured openings</h2><p class="muted">Hand-picked roles for postgraduate students and graduates, updated regularly. Roles disappear after their closing date.</p></div>
+<div id="jobs" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo725SthTMpqKW8008Fm299esj7dqhURekDklGl5VTx97coMbtn4-KcJ60-150OA5h6sJ2Da8uI-QV/pub?gid=0&amp;single=true&amp;output=csv" aria-live="polite"><p class="muted">Loading the latest openings&hellip;</p></div>
+<p class="small" style="margin-top:20px">Always apply through the original advert. Genuine employers never ask you to pay to apply.</p>
+</div></section>
+
 <section class="sec mist"><div class="wrap split">
-<header><h2>Find openings</h2><p>Where to search for roles across New Zealand. Members also share hand-picked openings in the Facebook group.</p></header>
+<header><h2>Search more roles</h2><p>Where to search for roles across New Zealand. Members also share openings in the Facebook group.</p></header>
 <ul class="rows">
 <li><h3><a href="https://www.seek.co.nz/" target="_blank" rel="noopener">Seek</a></h3><p>New Zealand&rsquo;s largest job board. Search by role and region, and set up job alerts.</p></li>
 <li><h3><a href="https://www.trademe.co.nz/a/jobs" target="_blank" rel="noopener">Trade Me Jobs</a></h3><p>A wide range of roles, including many in regional New Zealand.</p></li>

@@ -17,7 +17,7 @@ SCHOLAR='https://scholar.google.com/citations?user=oiIQG0sAAAAJ&amp;hl=en'
 LINKEDIN='https://www.linkedin.com/in/surej-p-john-48a13570/'
 RG='https://www.researchgate.net/profile/Surej-John'
 EIT='https://www.eit.ac.nz/staff/dr-surej-p-john/'
-NAV=[('index.html','Home'),('research.html','Research'),('teaching.html','Teaching'),('consulting.html','Consulting &amp; speaking'),('awards.html','Awards'),('contact.html','Contact')]
+NAV=[('index.html','Home'),('research.html','Research'),('teaching.html','Teaching'),('consulting.html','Consulting &amp; speaking'),('awards.html','Awards'),('careers.html','Careers'),('contact.html','Contact')]
 
 def page(fn, title, desc, body, extra_head=''):
     nav=''.join(f'<a href="{h}"{" aria-current=\"page\"" if h==fn else ""}>{t}</a>' for h,t in NAV if h!='contact.html')
@@ -53,7 +53,7 @@ def page(fn, title, desc, body, extra_head=''):
 </main>
 <footer class="foot"><div class="wrap">
 <div class="brand"><a class="name" href="index.html">Dr Surej P John</a><p style="margin-top:10px;max-width:34ch">Senior Lecturer in Marketing, School of Business, Eastern Institute of Technology, New Zealand.</p></div>
-<div><h4>Pages</h4><ul><li><a href="research.html">Research</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="consulting.html">Consulting &amp; speaking</a></li><li><a href="awards.html">Awards</a></li></ul></div>
+<div><h4>Pages</h4><ul><li><a href="research.html">Research</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="consulting.html">Consulting &amp; speaking</a></li><li><a href="awards.html">Awards</a></li><li><a href="careers.html">Careers</a></li></ul></div>
 <div><h4>Profiles</h4><ul><li><a href="{SCHOLAR}" target="_blank" rel="me noopener">Google Scholar</a></li><li><a href="{RG}" target="_blank" rel="me noopener">ResearchGate</a></li><li><a href="{LINKEDIN}" target="_blank" rel="me noopener">LinkedIn</a></li><li><a href="{EIT}" target="_blank" rel="noopener">EIT staff profile</a></li></ul></div>
 <div><h4>Contact</h4><ul><li><a href="mailto:spjohn@eit.ac.nz">Email me</a></li><li><a href="contact.html">Contact form</a></li></ul></div>
 <p class="base">&copy; 2026 Dr Surej P John. This site uses Google Analytics cookies to count visits and see which pages are read; it does not collect names or email addresses. <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">How Google uses this data</a>.</p>
@@ -323,6 +323,47 @@ awards=phead('Awards &amp; certifications','Awards and recognition for my resear
 </div></section>
 '''+closing('Looking for a speaker or reviewer?','I welcome invitations for guest lectures, keynotes and journal reviewing.','contact.html#industry')
 page('awards.html','Awards &amp; Certifications | Dr Surej P John','Awards, recognition and certifications of Dr Surej P John: Wiley reviewer recognition, international guest lecture appreciation, the New Zealand Certificate in Adult and Tertiary Teaching, and professional certificates from Meta and IBM.',awards)
+
+# ---------- CAREERS ----------
+FB='https://www.facebook.com/groups/2581477435669903/'
+careers=phead('Careers','Support for postgraduate students and graduates finding work in New Zealand: job openings, CV and interview help, and a community to share them with.')+f"""
+<section class="sec"><div class="wrap fbjoin">
+<div>
+<h2>Join the Postgrad Careers Hub</h2>
+<p class="lead">A private Facebook group where students and graduates share job openings, get feedback on CVs and cover letters, and prepare for interviews together.</p>
+<ul class="ticks2">
+<li>Job openings shared by members, with links to the original adverts</li>
+<li>CV, cover letter and interview tips</li>
+<li>A supportive community, moderated by me</li>
+</ul>
+<p style="margin-top:26px"><a class="btn btn-solid" href="{FB}" target="_blank" rel="noopener">Join the Facebook group</a></p>
+<p class="small" style="margin-top:12px">The group is private. Answer the short membership questions and I&rsquo;ll approve your request.</p>
+</div>
+<figure class="fbcard" aria-hidden="true"><span class="fbtag">New Zealand</span><strong>Postgrad Careers Hub</strong><span>Jobs, CVs, interviews and support</span></figure>
+</div></section>
+
+<section class="sec mist"><div class="wrap split">
+<header><h2>Find openings</h2><p>Where to search for roles across New Zealand. Members also share hand-picked openings in the Facebook group.</p></header>
+<ul class="rows">
+<li><h3><a href="https://www.seek.co.nz/" target="_blank" rel="noopener">Seek</a></h3><p>New Zealand&rsquo;s largest job board. Search by role and region, and set up job alerts.</p></li>
+<li><h3><a href="https://www.trademe.co.nz/a/jobs" target="_blank" rel="noopener">Trade Me Jobs</a></h3><p>A wide range of roles, including many in regional New Zealand.</p></li>
+<li><h3><a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener">LinkedIn Jobs</a></h3><p>Professional and graduate roles. Keep your LinkedIn profile up to date, as recruiters search there too.</p></li>
+<li><h3><a href="https://jobs.govt.nz/" target="_blank" rel="noopener">jobs.govt.nz</a></h3><p>Roles across New Zealand government agencies and the public sector.</p></li>
+<li><h3><a href="https://www.sjs.co.nz/" target="_blank" rel="noopener">Student Job Search</a></h3><p>Part-time, holiday and casual work for students while you study.</p></li>
+<li><h3><a href="https://www.careers.govt.nz/" target="_blank" rel="noopener">Careers New Zealand</a></h3><p>Free career planning tools, job profiles and CV and interview guides.</p></li>
+</ul>
+</div></section>
+
+<section class="sec"><div class="wrap">
+<h2 style="margin-bottom:28px">Get ready to apply</h2>
+<div class="cols">
+<div><h3>Show results on your CV</h3><p>Start each point with an action verb and add a number where you can. &ldquo;Grew Instagram followers by 30% in six months&rdquo; says more than &ldquo;Responsible for social media&rdquo;.</p></div>
+<div><h3>Use STAR in interviews</h3><p>Answer &ldquo;Tell me about a time&hellip;&rdquo; questions with the Situation, your Task, the Action you took and the Result.</p></div>
+<div><h3>Watch for job scams</h3><p>Genuine employers never ask you to pay a fee to apply or to get a job. If an offer looks too good to be true, check with me or report it in the group.</p></div>
+</div>
+</div></section>
+"""+closing('Need advice on your career?','Postgraduate students are welcome to get in touch about CVs, applications or research-based careers.','contact.html#students')
+page('careers.html','Careers | Dr Surej P John','Careers support for postgraduate students in New Zealand: join the Postgrad Careers Hub Facebook group, find job openings, and get CV and interview tips from Dr Surej P John.',careers)
 
 # ---------- CONTACT ----------
 contact=phead('Get in touch','Whether you are a prospective student, a researcher or an organisation, send me a message and tell me a little about what you have in mind.')+f'''

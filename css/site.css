@@ -225,6 +225,18 @@ blockquote{margin:18px 0 0;font-family:var(--serif);font-size:19px;line-height:1
 .certs h3{font-size:19px;margin:14px 0 6px}
 .certs p{font-size:15px;color:var(--muted);margin-bottom:8px}
 
+/* careers */
+.fbjoin{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:center}
+.fbjoin h2{margin-bottom:14px}
+.ticks2{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.ticks2 li{padding-left:30px;position:relative}
+.ticks2 li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:7px;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+.fbcard{margin:0;background:#ff9a5c;color:#2a2140;border-radius:8px;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:10px;aspect-ratio:1640/856;justify-content:center}
+.fbcard .fbtag{align-self:flex-start;background:#2a2140;color:#fff;border-radius:999px;padding:5px 14px;font-size:14px;font-weight:600}
+.fbcard strong{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.4vw,44px);line-height:1.05}
+.fbcard>span:last-child{font-size:16px}
+@media (max-width:960px){.fbjoin{grid-template-columns:minmax(0,1fr)}}
+
 /* contact */
 .contact{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,72px);align-items:start}
 .form{display:grid;gap:18px}

@@ -31,7 +31,12 @@ def page(fn, title, desc, body, extra_head=''):
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="img/portrait.jpg">
+<link rel="canonical" href="https://surejpjohn.com/{'' if fn=='index.html' else fn}">
+<meta property="og:type" content="{'profile' if fn=='index.html' else 'website'}">
+<meta property="og:site_name" content="Dr Surej P John">
+<meta property="og:url" content="https://surejpjohn.com/{'' if fn=='index.html' else fn}">
+<meta property="og:image" content="https://surejpjohn.com/img/portrait.jpg">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="css/site.css?v={V}">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HY0EFH1K6Y"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-HY0EFH1K6Y');</script>
@@ -67,7 +72,7 @@ def phead(h,p,img=None,alt=''):
     return f'<section class="phead{" photo" if img else ""}">{pic}<div class="wrap"><h1>{h}</h1><p>{p}</p></div></section>'
 
 # ---------- HOME ----------
-jsonld='<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Surej P John","honorificPrefix":"Dr","jobTitle":"Senior Lecturer in Marketing","image":"img/portrait.jpg","worksFor":{"@type":"CollegeOrUniversity","name":"Eastern Institute of Technology"},"email":"mailto:spjohn@eit.ac.nz","knowsAbout":["Information technology adoption","Digital marketing","Artificial intelligence in marketing","Customer experience","Value co-creation","Relationship marketing","Tourism marketing","Structural equation modelling"],"sameAs":["https://scholar.google.com/citations?user=oiIQG0sAAAAJ","'+EIT+'","'+LINKEDIN+'","'+RG+'"]}</script>\n<link rel="preload" as="image" href="img/class/applied-research-methods-lg.jpg">\n'
+jsonld='<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://surejpjohn.com/#person","name":"Surej P John","alternateName":["Dr Surej P John","Surej John","Surej P. John","Surej Palliparambil John","Dr Surej John"],"honorificPrefix":"Dr","givenName":"Surej","familyName":"John","url":"https://surejpjohn.com/","image":"https://surejpjohn.com/img/portrait.jpg","jobTitle":"Senior Lecturer in Marketing","worksFor":{"@type":"CollegeOrUniversity","name":"Eastern Institute of Technology (EIT)","alternateName":"EIT Te Aho a Māui","address":{"@type":"PostalAddress","addressCountry":"NZ"}},"email":"mailto:spjohn@eit.ac.nz","knowsAbout":["Information technology adoption","Digital marketing","Artificial intelligence in marketing","Customer experience","Value co-creation","Relationship marketing","Tourism marketing","Structural equation modelling"],"sameAs":["https://scholar.google.com/citations?user=oiIQG0sAAAAJ","https://www.eit.ac.nz/staff/dr-surej-p-john/","https://www.linkedin.com/in/surej-p-john-48a13570/","https://www.researchgate.net/profile/Surej-John"]},{"@type":"WebSite","@id":"https://surejpjohn.com/#website","url":"https://surejpjohn.com/","name":"Dr Surej P John","alternateName":["Surej P John","Surej John"],"about":{"@id":"https://surejpjohn.com/#person"}},{"@type":"ProfilePage","url":"https://surejpjohn.com/","name":"Dr Surej P John | Marketing Academic, EIT New Zealand","mainEntity":{"@id":"https://surejpjohn.com/#person"}}]}</script>\n<link rel="preload" as="image" href="img/class/applied-research-methods-lg.jpg">\n'
 home=f'''
 <section class="hero">
 <div class="hero-text">
@@ -124,7 +129,7 @@ home=f'''
 </div>
 </div></section>
 '''
-page('index.html','Dr Surej P John','Dr Surej P John is a Senior Lecturer in Marketing at EIT, New Zealand, researching information technology and digital marketing, artificial intelligence in marketing, customer experience and relationship marketing.',home,jsonld)
+page('index.html','Dr Surej P John | Marketing Academic, EIT New Zealand','Dr Surej P John is a Senior Lecturer in Marketing at EIT, New Zealand, researching information technology and digital marketing, artificial intelligence in marketing, customer experience and relationship marketing.',home,jsonld)
 
 # ---------- RESEARCH ----------
 research=phead('Research','How digital channels, AI and human interaction create value for customers, students and visitors. Most of my work uses survey data analysed with structural equation modelling, alongside systematic literature reviews and qualitative analysis.')+'''

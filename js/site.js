@@ -131,15 +131,28 @@ if(jb&&jb.dataset.src){
     if(!rows.length)throw new Error('empty');
     const h=rows[0].map(x=>x.trim().toLowerCase());
     const col=n=>h.findIndex(x=>x.startsWith(n));
-    const ix={t:col('title'),e:col('employer'),l:col('location'),ty:col('type'),c:col('clos'),k:col('link'),n:col('note')};
+    const ix={t:col('title'),e:col('employer'),l:col('location'),ty:col('type'),c:col('clos'),k:col('link'),n:col('note'),r:col('region')};
     const g=(r,k)=>ix[k]>=0?(r[ix[k]]||'').trim():'';
     const today=new Date();today.setHours(0,0,0,0);
-    const jobs=rows.slice(1).map(r=>({t:g(r,'t'),e:g(r,'e'),l:g(r,'l'),ty:g(r,'ty'),d:parseDate(g(r,'c')),k:safeUrl(g(r,'k')),n:g(r,'n')}))
+    const jobs=rows.slice(1).map(r=>({t:g(r,'t'),e:g(r,'e'),l:g(r,'l'),ty:g(r,'ty'),d:parseDate(g(r,'c')),k:safeUrl(g(r,'k')),n:g(r,'n'),r:g(r,'r')}))
       .filter(x=>x.t&&(!x.d||x.d>=today))
       .sort((a,b)=>(a.d?a.d.getTime():Infinity)-(b.d?b.d.getTime():Infinity));
     if(!jobs.length){jb.innerHTML=`<div class="jobs-empty"><p>No featured openings right now. New roles are shared regularly in the <a href="${fb}" target="_blank" rel="noopener">Postgrad Careers Hub Facebook group</a>, and you can search the job sites below.</p></div>`;return}
-    jb.innerHTML='<ul class="jobs">'+jobs.map(x=>{const days=x.d?Math.round((x.d-today)/864e5):null;const soon=days!==null&&days<=7;
-      return `<li><div class="jb-main"><h3>${esc(x.t)}</h3><p class="jb-meta">${[x.e,x.l].filter(Boolean).map(esc).join(', ')}</p>${x.n?`<p class="jb-note">${esc(x.n)}</p>`:''}<p class="jb-tags">${x.ty?`<span class="jb-type">${esc(x.ty)}</span>`:''}${x.d?`<span class="jb-close${soon?' soon':''}">${soon?(days===0?'Closes today':'Closes soon: '):'Closes '}${days===0?'':fmt(x.d)}</span>`:''}</p></div>${x.k?`<a class="btn btn-solid" href="${esc(x.k)}" target="_blank" rel="noopener">View advert</a>`:''}</li>`}).join('')+'</ul>';
+    const REG=[["Hawke's Bay",/hawke|napier|hastings|wairoa|havelock north|waipukurau|waipawa/],["Northland",/northland|whang[aā]rei|kerikeri|kaitaia|dargaville/],["Auckland",/auckland|manukau|takapuna|north shore|wiri|east tamaki|rosedale|glen eden|newmarket|albany|henderson|penrose|mo?u?n?t\.? wellington|onehunga|botany|papakura|pukekohe|takanini|morningside|parnell|ponsonby|ellerslie|mt eden/],["Waikato",/waikato|hamilton|morrinsville|cambridge|te awamutu|matamata|taup[oō]|thames|huntly|tokoroa|putaruru|te kuiti/],["Bay of Plenty",/bay of plenty|tauranga|rotorua|whakat[aā]ne|maunganui|te puke|edgecumbe|tauriko|kawerau|[oō]p[oō]tiki/],["Gisborne",/gisborne|tair[aā]whiti/],["Taranaki",/taranaki|new plymouth|h[aā]wera|stratford/],["Manawatū-Whanganui",/manawat|palmerston north|whanganui|wanganui|levin|feilding|ohakune/],["Wellington",/(^|[^t] )wellington|^wellington|lower hutt|upper hutt|porirua|k[aā]piti|petone|masterton|wairarapa|paraparaumu/],["Nelson, Tasman & Marlborough",/nelson|tasman|marlborough|blenheim|motueka/],["Canterbury",/canterbury|christchurch|timaru|ashburton|rangiora|rolleston|kaik[oō]ura/],["West Coast",/west coast|greymouth|hokitika|westport/],["Otago",/otago|dunedin|queenstown|w[aā]naka|oamaru|cromwell|ettrick/],["Southland",/southland|invercargill|te anau/]];
+    const MULTI='Multiple locations',WIDE='New Zealand-wide & remote',OTHER='Other locations';
+    const regionOf=x=>{if(x.r){const r=REG.find(([n])=>n.toLowerCase()===x.r.toLowerCase());return r?r[0]:x.r}
+      const l=x.l.toLowerCase().replace(/mo?u?n?t\.? wellington/g,'mount-wellington auckland');
+      const hit=REG.filter(([,re])=>re.test(l)).map(([n])=>n);
+      if(hit.length===1)return hit[0];if(hit.length>1)return MULTI;
+      return /new zealand|nz-?wide|nationwide|remote|various|anywhere/.test(l)?WIDE:OTHER};
+    const order=REG.map(r=>r[0]).concat([MULTI,WIDE,OTHER]);
+    const groups={};jobs.forEach(x=>{const r=regionOf(x);(groups[r]=groups[r]||[]).push(x)});
+    const names=Object.keys(groups).sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?order.length-1:ia)-(ib<0?order.length-1:ib)});
+    const slug=n=>'jobs-'+n.toLowerCase().normalize('NFD').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    const item=x=>{const days=x.d?Math.round((x.d-today)/864e5):null;const soon=days!==null&&days<=7;
+      return `<li><div class="jb-main"><h4>${esc(x.t)}</h4><p class="jb-meta">${[x.e,x.l].filter(Boolean).map(esc).join(', ')}</p>${x.n?`<p class="jb-note">${esc(x.n)}</p>`:''}<p class="jb-tags">${x.ty?`<span class="jb-type">${esc(x.ty)}</span>`:''}${x.d?`<span class="jb-close${soon?' soon':''}">${soon?(days===0?'Closes today':'Closes soon: '):'Closes '}${days===0?'':fmt(x.d)}</span>`:''}</p></div>${x.k?`<a class="btn btn-solid" href="${esc(x.k)}" target="_blank" rel="noopener">View advert</a>`:''}</li>`};
+    jb.innerHTML=(names.length>1?`<nav class="jb-regions" aria-label="Jump to a region"><p>Jump to a region:</p><ul>${names.map(n=>`<li><a href="#${slug(n)}">${esc(n)} <span>${groups[n].length}</span></a></li>`).join('')}</ul></nav>`:'')
+      +names.map(n=>`<section class="jb-group" id="${slug(n)}" aria-labelledby="${slug(n)}-h"><h3 id="${slug(n)}-h">${esc(n)} <span class="jb-count">${groups[n].length} ${groups[n].length===1?'role':'roles'}</span></h3><ul class="jobs">${groups[n].map(item).join('')}</ul></section>`).join('');
   }).catch(()=>{jb.innerHTML=`<div class="jobs-empty"><p>The featured openings can&rsquo;t be loaded right now. See the latest roles in the <a href="${fb}" target="_blank" rel="noopener">Postgrad Careers Hub Facebook group</a> or search the job sites below.</p></div>`});
 }
 

@@ -243,7 +243,7 @@ blockquote{margin:18px 0 0;font-family:var(--serif);font-size:19px;line-height:1
 .jobs li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:22px 0;border-top:1px solid var(--line)}
 .jobs li:last-child{border-bottom:1px solid var(--line)}
 .jb-main{flex:1 1 420px;min-width:0}
-.jobs h3{font-size:22px;margin-bottom:4px}
+.jobs h4{font-size:20px;line-height:1.3;margin:0 0 4px}
 .jb-meta{color:var(--muted);font-size:16px;margin:0}
 .jb-note{font-size:15px;margin:6px 0 0}
 .jb-tags{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
@@ -336,3 +336,13 @@ body{font-size:16px}
 .conf-now h3{margin-bottom:6px}
 .conf-now>p{margin-bottom:12px}
 .tips ul{margin:8px 0 0;padding-left:18px}
+.jb-regions{margin:0 0 36px}
+.jb-regions p{font-size:15px;color:var(--muted);margin:0 0 10px}
+.jb-regions ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.jb-regions a{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:15px;font-weight:600;text-decoration:none;color:var(--ink)}
+.jb-regions a:hover,.jb-regions a:focus-visible{border-color:currentColor}
+.jb-regions a span{font-weight:500;color:var(--muted);font-size:13.5px}
+.jb-group{margin-bottom:44px;scroll-margin-top:96px}
+.jb-group:last-child{margin-bottom:0}
+.jb-group h3{font-size:24px;margin:0 0 6px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.jb-count{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--muted)}

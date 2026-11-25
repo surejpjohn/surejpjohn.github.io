@@ -357,7 +357,7 @@ careers=phead('Careers','Support for postgraduate students and graduates finding
 </div></section>
 
 <section class="sec" id="openings"><div class="wrap">
-<div class="sec-head"><h2>Featured openings</h2><p class="muted">Hand-picked roles for postgraduate students and graduates, updated regularly. Roles disappear after their closing date.</p></div>
+<div class="sec-head"><h2>Featured openings</h2><p class="muted">Hand-picked roles for postgraduate students and graduates, grouped by region with Hawke&rsquo;s Bay first. Updated every week; roles disappear after their closing date.</p></div>
 <div id="jobs" data-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRo725SthTMpqKW8008Fm299esj7dqhURekDklGl5VTx97coMbtn4-KcJ60-150OA5h6sJ2Da8uI-QV/pub?gid=0&amp;single=true&amp;output=csv" aria-live="polite"><p class="muted">Loading the latest openings&hellip;</p></div>
 <p class="small" style="margin-top:20px">Always apply through the original advert. Genuine employers never ask you to pay to apply.</p>
 </div></section>

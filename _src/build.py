@@ -167,8 +167,8 @@ research=phead('Research','How digital channels, AI and human interaction create
 <h3>ANZMAC 2026, Auckland</h3>
 <p class="muted">30 November to 2 December 2026, hosted with Massey University. Theme: &ldquo;Marketing in the Age of Plenty?&rdquo;</p>
 <ul class="tips">
-<li><strong>Four research presentations</strong> with co-authors from three countries and three business schools, including:
-<ul><li>&ldquo;Marketing Tourism in the Age of Digital Plenty: Explaining Technology-Enabled Value Co-Creation&rdquo;</li><li>&ldquo;Beyond Automation: How AI Capabilities Transform Customer Experience in Online Food Delivery Services&rdquo;</li></ul></li>
+<li><strong>Four research presentations</strong> with co-authors from three countries and three business schools:
+<ul><li>&ldquo;Marketing Tourism in the Age of Digital Plenty: Explaining Technology-Enabled Value Co-Creation&rdquo;</li><li>&ldquo;Beyond Automation: How AI Capabilities Transform Customer Experience in Online Food Delivery Services&rdquo;</li><li>&ldquo;AI-Enhanced Customer Experiences and the Consumer Well-Being Paradox&rdquo;</li><li>&ldquo;Humanised AI and Consumer Well-Being in the Age of Plenty&rdquo; (lightning talk)</li></ul></li>
 <li><strong>Chairing two sessions.</strong></li>
 <li>Attendance supported by EIT research funding.</li>
 </ul>
@@ -288,7 +288,7 @@ consulting=phead('Consulting &amp; speaking','I help organisations make marketin
 <section class="sec"><div class="wrap split">
 <header><h2>Recent talks and workshops</h2></header>
 <ul class="rows when-list">
-<li><span class="when">30 Nov &ndash; 2 Dec 2026</span><div><h3>ANZMAC 2026 conference, Auckland</h3><p>Four research presentations, including work on technology-enabled value co-creation in tourism and AI in online food delivery, and chairing two sessions at the Australian and New Zealand Marketing Academy conference.</p></div></li>
+<li><span class="when">30 Nov &ndash; 2 Dec 2026</span><div><h3>ANZMAC 2026 conference, Auckland</h3><p>Four research presentations, on technology-enabled value co-creation in tourism, AI in online food delivery, and AI and consumer well-being, and chairing two sessions at the Australian and New Zealand Marketing Academy conference.</p></div></li>
 <li><span class="when">8 Oct 2026</span><div><h3>Research Workshop for the CERT Volunteer Research Team</h3><p>An online workshop for the Community Education &amp; Research Trust (CERT) on planning research, data collection, data analysis, and qualitative and quantitative methods, to strengthen community research capability in New Zealand.</p><a class="talkimg" href="img/talks/cert-research-workshop-2026.jpg" target="_blank" rel="noopener"><img src="img/talks/cert-research-workshop-2026.jpg" width="800" height="666" loading="lazy" decoding="async" alt="Banner for the CERT and EIT research workshop led by Dr Surej P John, Thursday 8 October 2026, online"></a></div></li>
 <li><span class="when">9 Sep 2026</span><div><h3>E-Commerce in the AI Era: Trends, Marketing &amp; Consumer Behaviour</h3><p>International guest lecture for MBA students, hosted by Amity Business School and the Centre for International Affairs, Amity University Chhattisgarh, Raipur, India. <a href="img/certs/amity-letter-of-appreciation.jpg" target="_blank" rel="noopener">Read the letter of appreciation</a>.</p></div></li>
 </ul>

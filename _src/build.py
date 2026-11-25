@@ -361,11 +361,35 @@ careers=phead('Careers','Support for postgraduate students and graduates finding
 </div></section>
 
 <section class="sec"><div class="wrap">
-<h2 style="margin-bottom:28px">Get ready to apply</h2>
-<div class="cols">
-<div><h3>Show results on your CV</h3><p>Start each point with an action verb and add a number where you can. &ldquo;Grew Instagram followers by 30% in six months&rdquo; says more than &ldquo;Responsible for social media&rdquo;.</p></div>
-<div><h3>Use STAR in interviews</h3><p>Answer &ldquo;Tell me about a time&hellip;&rdquo; questions with the Situation, your Task, the Action you took and the Result.</p></div>
-<div><h3>Watch for job scams</h3><p>Genuine employers never ask you to pay a fee to apply or to get a job. If an offer looks too good to be true, check with me or report it in the group.</p></div>
+<h2 style="margin-bottom:12px">Get ready to apply</h2>
+<p class="lede" style="margin-bottom:28px">Quick tips to help you stand out, interview with confidence and stay safe while job hunting.</p>
+<div class="cols tipcols">
+<div><h3>Quick tips on your CV</h3><ul class="tips">
+<li><strong>Tailor it to each job.</strong> Use the key words from the advert, since many employers screen CVs with software.</li>
+<li><strong>Show results, not duties.</strong> Start points with action verbs (led, built, analysed) and add numbers where you can.</li>
+<li><strong>Keep it short.</strong> Two pages is plenty for most graduate roles. Open with a 3&ndash;4 line profile written for the role.</li>
+<li><strong>Include all relevant experience,</strong> including projects, research, internships and volunteering.</li>
+<li><strong>Follow NZ norms.</strong> Leave out your photo, age and marital status. Check spelling, and make sure your LinkedIn matches your CV.</li>
+</ul></div>
+<div><h3>Quick tips for interviews</h3><ul class="tips">
+<li><strong>Research the organisation:</strong> its products, customers, values and recent news.</li>
+<li><strong>Use STAR</strong> to structure your answers: Situation, Task, Action (what <em>you</em> did) and Result.</li>
+<li><strong>Prepare examples</strong> that match each requirement in the job description.</li>
+<li><strong>For online interviews,</strong> test your camera, microphone and link beforehand, and log in early.</li>
+<li><strong>Ask two or three questions,</strong> for example &ldquo;What does success look like in the first six months?&rdquo;</li>
+<li><strong>Follow up</strong> with a short thank-you email within a day. If you&rsquo;re unsuccessful, politely ask for feedback.</li>
+</ul></div>
+<div><h3>Avoiding job scams</h3><p class="tipnote"><strong>Genuine employers never ask you to pay a fee to apply or to get a job.</strong> Watch for these red flags:</p><ul class="tips">
+<li>You&rsquo;re offered a job without a proper interview.</li>
+<li>The pay is unusually high for little work or &ldquo;simple tasks&rdquo; like liking posts or rating products.</li>
+<li>You&rsquo;re asked to pay for training, equipment, visas or a starter kit.</li>
+<li>Contact happens only through WhatsApp, Telegram or a personal email address.</li>
+<li>You&rsquo;re pressured to decide quickly or keep the offer secret.</li>
+<li>You&rsquo;re asked to receive money and pass it on. This can make you a money mule.</li>
+</ul>
+<p class="tipnote"><strong>Protect yourself:</strong> contact the company through its own website rather than the advert, check it on the NZ Companies Register, and don&rsquo;t share bank details, your IRD number or passport copies until you have a verified written offer.</p>
+<p class="tipnote"><strong>If something feels wrong:</strong> stop contact, call your bank if you&rsquo;ve shared financial details, and report it to <a href="https://netsafe.org.nz" target="_blank" rel="noopener">Netsafe</a> or the <a href="https://www.ncsc.govt.nz" target="_blank" rel="noopener">National Cyber Security Centre</a>. You&rsquo;re also welcome to check with me or flag it in the Postgrad Careers Hub group.</p>
+</div>
 </div>
 </div></section>
 """+closing('Need advice on your career?','Postgraduate students are welcome to get in touch about CVs, applications or research-based careers.','contact.html#students')

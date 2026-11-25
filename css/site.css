@@ -326,3 +326,9 @@ body{font-size:16px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 @media (min-width:1500px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.lede{font-size:18px;color:var(--muted);max-width:62ch}
+.tips{margin:0;padding-left:18px;font-size:16px;color:var(--muted)}
+.tips li{margin-bottom:10px}
+.tips strong,.tipnote strong{color:var(--ink,inherit)}
+.cols p.tipnote{margin:0 0 12px}
+.cols .tips+.tipnote{margin-top:6px}

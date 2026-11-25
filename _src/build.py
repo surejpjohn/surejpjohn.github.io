@@ -99,6 +99,7 @@ home=f'''
 <section class="sec mist"><div class="wrap split">
 <header><h2>Currently</h2><p>What I am working on now.</p></header>
 <ul class="now">
+<li><span class="when">Dec 2026</span><div><b>ANZMAC 2026, Auckland.</b> Four research presentations with co-authors from three countries, and chairing two sessions. <a href="research.html#conferences">Conferences</a></div></li>
 <li><span class="when">2026</span><div><b>Beyond Automation: How AI Capabilities Transform Customer Experience in Online Food Delivery Services.</b> A new study funded by an EIT research grant. <a href="research.html">Research</a></div></li>
 <li><span class="when">Sep 2026</span><div><b>E-Commerce in the AI Era.</b> International guest lecture for MBA students at Amity University Chhattisgarh, India. <a href="consulting.html">Speaking</a></div></li>
 <li><span class="when">2026</span><div><b>Influencer marketing and tourist behaviour.</b> A systematic literature review published in the International Journal of Tourism Research. <a href="research.html">Publications</a></div></li>
@@ -141,7 +142,9 @@ research=phead('Research','How digital channels, AI and human interaction create
 <section class="sec mist"><div class="wrap split">
 <header><h2>Current projects</h2></header>
 <ul class="rows one">
-<li><h3>AI capabilities and customer experience in online food delivery</h3><p>Funded by the EIT research grant above.</p></li>
+<li><h3>AI capabilities and customer experience in online food delivery</h3><p>Funded by the EIT research grant above, and presented at ANZMAC 2026.</p></li>
+<li><h3>Technology-enabled value co-creation in tourism</h3><p>&ldquo;Marketing Tourism in the Age of Digital Plenty: Explaining Technology-Enabled Value Co-Creation&rdquo; develops the TAMV framework. The full paper is under review with a journal, and presented at ANZMAC 2026.</p></li>
+<li><h3>Customer experience and emerging technologies</h3><p>&ldquo;Reframing Customer Experience in the Digital Age: Insights into the Boundaries and Benefits of Emerging Technologies&rdquo; develops the Technology-Enabled Customer Experience (TECX) framework. Paper under review.</p></li>
 <li><h3>Student satisfaction in New Zealand tertiary education</h3><p>What drives satisfaction among tertiary students, and how providers can respond.</p></li>
 <li><h3>Retailers&rsquo; adoption of information technology</h3><p>How retailers adopt and spread IT when forming their marketing strategies.</p></li>
 </ul>
@@ -160,6 +163,16 @@ research=phead('Research','How digital channels, AI and human interaction create
 <section class="sec" id="conferences"><div class="wrap">
 <h2 style="margin-bottom:10px">Conferences</h2>
 <p class="muted" style="margin-bottom:28px">Presenting my research at the Australian and New Zealand Marketing Academy (ANZMAC) conference.</p>
+<div class="conf-now">
+<h3>ANZMAC 2026, Auckland</h3>
+<p class="muted">30 November to 2 December 2026, hosted with Massey University. Theme: &ldquo;Marketing in the Age of Plenty?&rdquo;</p>
+<ul class="tips">
+<li><strong>Four research presentations</strong> with co-authors from three countries and three business schools, including:
+<ul><li>&ldquo;Marketing Tourism in the Age of Digital Plenty: Explaining Technology-Enabled Value Co-Creation&rdquo;</li><li>&ldquo;Beyond Automation: How AI Capabilities Transform Customer Experience in Online Food Delivery Services&rdquo;</li></ul></li>
+<li><strong>Chairing two sessions.</strong></li>
+<li>Attendance supported by EIT research funding.</li>
+</ul>
+</div>
 <div class="gal three">
 <figure><a href="img/conf/anzmac-2025-presenting.jpg" target="_blank" rel="noopener"><img src="img/conf/anzmac-2025-presenting.jpg" width="1400" height="788" loading="lazy" decoding="async" alt="Dr John presenting the paper Riding the digital wave at ANZMAC 2025" style="object-position:60% 50%"></a><figcaption>Presenting &ldquo;Riding the digital wave: Unpacking technology-enabled customer experience in marketing&rdquo; at ANZMAC 2025</figcaption></figure>
 <figure><a href="img/conf/anzmac-2025.jpg" target="_blank" rel="noopener"><img src="img/conf/anzmac-2025.jpg" width="1400" height="788" loading="lazy" decoding="async" alt="Dr John at the ANZMAC 2025 conference"></a><figcaption>At ANZMAC 2025</figcaption></figure>
@@ -275,6 +288,7 @@ consulting=phead('Consulting &amp; speaking','I help organisations make marketin
 <section class="sec"><div class="wrap split">
 <header><h2>Recent talks and workshops</h2></header>
 <ul class="rows when-list">
+<li><span class="when">30 Nov &ndash; 2 Dec 2026</span><div><h3>ANZMAC 2026 conference, Auckland</h3><p>Four research presentations, including work on technology-enabled value co-creation in tourism and AI in online food delivery, and chairing two sessions at the Australian and New Zealand Marketing Academy conference.</p></div></li>
 <li><span class="when">8 Oct 2026</span><div><h3>Research Workshop for the CERT Volunteer Research Team</h3><p>An online workshop for the Community Education &amp; Research Trust (CERT) on planning research, data collection, data analysis, and qualitative and quantitative methods, to strengthen community research capability in New Zealand.</p><a class="talkimg" href="img/talks/cert-research-workshop-2026.jpg" target="_blank" rel="noopener"><img src="img/talks/cert-research-workshop-2026.jpg" width="800" height="666" loading="lazy" decoding="async" alt="Banner for the CERT and EIT research workshop led by Dr Surej P John, Thursday 8 October 2026, online"></a></div></li>
 <li><span class="when">9 Sep 2026</span><div><h3>E-Commerce in the AI Era: Trends, Marketing &amp; Consumer Behaviour</h3><p>International guest lecture for MBA students, hosted by Amity Business School and the Centre for International Affairs, Amity University Chhattisgarh, Raipur, India. <a href="img/certs/amity-letter-of-appreciation.jpg" target="_blank" rel="noopener">Read the letter of appreciation</a>.</p></div></li>
 </ul>

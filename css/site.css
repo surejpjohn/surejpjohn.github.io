@@ -332,3 +332,7 @@ body{font-size:16px}
 .tips strong,.tipnote strong{color:var(--ink,inherit)}
 .cols p.tipnote{margin:0 0 12px}
 .cols .tips+.tipnote{margin-top:6px}
+.conf-now{border-top:2px solid currentColor;padding-top:16px;margin-bottom:36px;max-width:820px}
+.conf-now h3{margin-bottom:6px}
+.conf-now>p{margin-bottom:12px}
+.tips ul{margin:8px 0 0;padding-left:18px}
